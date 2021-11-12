@@ -23,7 +23,7 @@
         android:backgroundTint="@color/bt_refresh"
         android:src="@drawable/ic_refresh"
         android:importantForAccessibility="no"
-        app:fabSize="normal"/>
+        app:fabSize="normal" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

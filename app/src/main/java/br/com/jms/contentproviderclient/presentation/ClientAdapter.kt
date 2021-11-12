@@ -8,10 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jms.contentproviderclient.R
 
-class ClientAdapter(private val mCursor: Cursor): RecyclerView.Adapter<ClientViewHolder>() {
+class ClientAdapter(private val mCursor: Cursor) : RecyclerView.Adapter<ClientViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientViewHolder =
-        ClientViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.note_item, parent, false))
+        ClientViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.note_item, parent, false)
+        )
 
     override fun getItemCount(): Int = mCursor.count
 
@@ -20,10 +22,9 @@ class ClientAdapter(private val mCursor: Cursor): RecyclerView.Adapter<ClientVie
         holder.clientTitle.text = mCursor.getString(mCursor.getColumnIndex("title"))
         holder.clientDescription.text = mCursor.getString(mCursor.getColumnIndex("description"))
     }
-
 }
 
-class ClientViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+class ClientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val clientTitle = itemView.findViewById(R.id.client_item_title) as TextView
     val clientDescription = itemView.findViewById(R.id.client_item_description) as TextView
 }
